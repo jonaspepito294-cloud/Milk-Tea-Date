@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+ background:linear-gradient(135deg,#ffd6e8,#fff5d6);
+     font-family:Arial,sans-serif;
+     overflow:hidden;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px r gba(0,0,0.15);
+}
+
+button{
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor:pointer;
+}
+ 
+#start{
+    background:#44336;
+    color:white;
+}
+
+#yes{
+     background:#4CAF50;
+     color:pink;
+}
+
+#no{
+    background:#f44336;
+    color:white;
+    position:relative;
+}
+
+#next{
+    background:#f44336;
+    color:white;
+    
+h1{
+   color:#ff4f8b;
+ }
+ </style>
+ </head>
+
+ <body>
+
+ <div class="card">
+     <div id="page1">
+         <h1>hi binibining marilag! &#128516;</h1>
+         <p>I made something just for you.</p>
+         <button id="start" onclick="showQuestion()">Open &#128151</button>
+     </div>
+    
+     <div id="page2" style="display:none;">
+         <h1>Will you go on a Milk Tea Date with me? Libre ko na &#128522;</h1>
+         <button id="yes" onclick="yesAnswer()">Yes!</button>
+         <button id="no" onmouseover="moveNo()">No</button>
+     </div>
+ 
+     <div id="page3" style="display:none;">
+         <h1>YAY!! &#128563; 💗 </h1>
+         <p>it's a date! I'll bring the smiles, you bring yourself.&#128516; &#129380;</p>
+         <button id="next" onclick="nextAnswer()">Next</button>
+     </div>
+   
+     <div id="page4" style="display:none;">
+         <h1> Kindly Screenshot this and send it to the owner &#129310</h1>
+         <p>Dear Owner, I agree to go on a Milk Tea Date with you and to decide the specific plan on that day.</p>
+         <button>DONE</button>
+     </div>
+
+</div>
+
+<script>
+function showQuestion(){
+
+document.getElementById("page1").style.display="none";
+
+document.getElementById("page2").style.display="block";
+}
+
+function yesAnswer(){
+
+document.getElementById("page2").style.display="none";
+
+document.getElementById("page3").style.display="block";
+}
+
+function nextAnswer(){
+
+document.getElementById("page3").style.display="none";
+
+document.getElementById("page4").style.display="block";
+}
+
+function moveNo(){
+    const btn=document.getElementById("no");
+    btn.style.position="absolute";
+
+
+btn.style.left=Math.random()*(window.innerWidth-100)+"px";
+
+btn.style.top=Math.random()*(window.innerHeight-60)+"px";
+}
+</script>
+
+</body>
+</html>
